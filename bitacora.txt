@@ -1,3 +1,12 @@
+Url de la peticion: http://127.0.0.1:5500/index.html
+protocolo: http
+host: 127.0.0.1
+puerto: 5500
+ruta: ~/Desktop/Slz/Rueda-libre/
+metodo de petición: GET
+codigo de estado: 304
+error en la pagina: 404 file not found
+
 Html: usare html para estructurar toda la pagina, su texto encabezado, entre otros, un ejemplo seria su titulo (nombre de la empresa).
 
 Css: utilizare css para darle color a cuadros o formas que utilice para la decoracion de la pagina, ademas modificar el tamaño de los textos un ejemplo, el color de los cuadros de texto en donde iran los parrafos.
