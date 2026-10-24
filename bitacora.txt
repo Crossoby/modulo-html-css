@@ -30,3 +30,56 @@ pruebas de formatos en Reservas.html
 | 6 | Fecha de reserva | Intentar seleccionar 25/10/2026 | La fecha debe estar dentro del rango del 01/11/2026 al 31/12/2026. | ______________________________ |
 | 7 | Cantidad de bicicletas | Escribir "0" | El navegador debe impedir el envío porque la cantidad mínima es 1. | ______________________________ |
 | 8 | Confirmación | No marcar la casilla de aceptación | El navegador debe impedir el envío porque la confirmación es obligatoria. | ______________________________ |
+
+Bitácora de accesibilidad web
+
+
+1. Hallazgos de accesibilidad y correcciones
+
+| Página | Hallazgo | Corrección |
+|---|---|---|
+| Inicio | Las imágenes tienen textos alternativos poco descriptivos, como alt="logo" y alt="Imagen Bicicleta". | Utilizar descripciones más claras, como alt="Logo de Rueda Libre" y alt="Bicicleta disponible para alquiler". |
+| Reservas y Tarifas | El idioma está declarado como lang="en", aunque el contenido está en español. | Cambiarlo por lang="es". |
+| Las tres páginas | Los encabezados h2 están ubicados directamente dentro de listas ul. | Colocar los encabezados fuera de las listas. |
+| Inicio | El enlace «Consultar» no describe claramente su destino. | Cambiarlo por «Consultar tarifas de alquiler». |
+| Inicio | El enlace hacia los recorridos apunta a #Tabla, pero la sección de destino tiene id="tabla". | Utilizar href="paginas/tarifas.html#tabla". |
+| Inicio | El encabezado «Nuestra ubicación» utiliza h4 sin un h3 anterior. | Cambiarlo por h3. |
+| Reservas | La etiqueta de comentarios no coincide con el identificador del campo de texto. | Utilizar for="comentarios" e id="comentarios", con una etiqueta descriptiva. |
+| Tarifas | No existe un encabezado principal h1. | Agregar `<h1>Tarifas de Rueda Libre</h1>. |
+
+
+
+2. Verificación de contraste
+
+Se tomó como referencia el nivel WCAG AA: contraste mínimo de 4.5:1 para texto normal y 3:1 para texto grande.
+
+| Combinación | Contraste | Clasificación |
+|---|---|---|
+| Blanco sobre Verde Ruta | 5.31:1 | Apta para texto normal |
+| Blanco sobre Naranja Pedal | 2.22:1 | No apta |
+| Azul Noche sobre Naranja Pedal | 7.20:1 | Apta para texto normal |
+| Gris Asfalto sobre Crema | 5.57:1 | Apta para texto normal |
+| Verde Ruta sobre Crema | 4.93:1 | Apta para texto normal |
+| Naranja Pedal sobre Crema | 2.06:1 | No apta |
+| Blanco sobre Azul Noche | 15.97:1 | Apta para texto normal |
+
+El blanco utilizado corresponde a #FFFFFF.
+
+4. Mapa de uso de colores
+Fondo general:Crema #FAF6EF.
+Títulos:Azul Noche #14213D.
+Texto secundario:Gris Asfalto #5B6470.
+Enlaces:Verde Ruta #1E7A4F sobre Crema, con subrayado.
+Botones principales:Verde Ruta con texto blanco.
+Botones secundarios:Naranja Pedal con texto Azul Noche.
+Destacados:Naranja Pedal con texto Azul Noche.
+
+Se evitará utilizar texto blanco sobre Naranja Pedal y texto Naranja Pedal sobre Crema, porque no cumplen el contraste mínimo de accesibilidad.
+
+3. Conclusión
+
+Durante la revisión del proyecto Rueda Libre identifiqué problemas relacionados con textos alternativos, encabezados, enlaces, idioma del documento y formularios.
+
+También comprobé qué combinaciones de colores cumplen los requisitos de contraste WCAG AA y elaboré un mapa para utilizarlas correctamente cuando empiece a trabajar con CSS.
+
+Como siguiente paso, aplicaré las correcciones al HTML y comprobaré la navegación por teclado antes de publicar el sitio en GitHub Pages.
