@@ -11,6 +11,7 @@
         <li><a href="../index.html">Inicio</a></li>
         <li><a href="tarifas.html">Tarifas</a></li>
         <li><a href="reservas.html">Reservas</a></li></ul>
+<aside>
 <section id="contenido-complementario">
     <ul>
         <h2>Horarios de atencion</h2>
@@ -24,9 +25,80 @@
         <li>Festivos: 6:00 am - 2:00 pm</li>
     </ul>
 </section>
+</aside>
+<section id="formulario-reserva">
+    <form action="" method="post">
+        <fieldset>
+            <legend><strong>Llena tus datos para reservar</strong></legend>
+            <div>
+                <label for="nombre">Nombre: </label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <div>
+                <label for="documento">Documento: </label>
+                <input type="tel" id="documento" name="documento" pattern[0-9]{10}>
+            </div>
+            <div>
+                <label for="email">Correo Electronico: </label>
+                <input type="email" id="email" name="email"> 
+            </div>
+            <div>
+                <label for="telefono">Numero de celular: </label>
+                <input type="tel" id="telefono" name="telefono" pattern3[0-9]{9}>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend><strong>Tu alquiler</strong></legend>
+            <div>
+                <label for="fecha">Fecha de reserva</label>
+                <input type="date" id="fecha" name="fecha">
+                <div>
+                    <label for="tipo-bicicleta">Tipo de bicicleta</label>
+                    <select name="tipo-bicicleta" id="tipo-bicicleta">
+                        <option value="" selected disabled>Selecciona tu tipo de bicicleta</option>
+                        <option value="urbana">Urbana</option>
+                        <option value="montaña">Montaña</option>
+                        <option value="electrica">Electrica</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label for="hora">¿Que plan deseas?</label>
+                <select name="hora" id="hora">
+                    <option value="" selected disabled>Seleccione la cantidad de horas</option>
+                    <option value="una">1 hora</option>
+                    <option value="medio-dia">Medio dia (4H)</option>
+                    <option value="dia">Dia completo</option>
+                </select>
+            </div>
+            <div>
+                <label for="ruta">¿Deseas una ruta guiada?</label>
+                <select name="ruta" id="ruta">
+                    <option value="" selected disabled>Selecciona la ruta</option>
+                    <option value="rios">Rios y parques (12 km)</option>
+                    <option value="sabores">Sabores de barrio (18 km)</option>
+                    <option value="palmas">Reto palmas (25 km)</option>
+                    <option value="ninguna">Nninguna</option>
+                </select>
+            </div>
+            <div>
+                <label for="cantidad">¿Cuantas deseas alquilar?</label>
+                <input type="number" id="cantidad" name="cantidad" >
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend><strong>Confirmación</strong></legend>
+            <label for="confirmacion">¿Desea confirmar?</label>
+            <input type="checkbox" id="confirmacion" name="confirmacion">
+        </fieldset>
+            <button type="submit">Reservar mi cupo</button>
+    </form>
+
+</section>
     <a href="mailto:correo@example.com">Inaquietudes a nuestro correo</a>
     <footer>Rueda Libre</footer>
     <footer>Nuestro correo: <a href="mailto:ejemplo@example.com">ejemplo@example.com</a></footer>
     <footer>2026</footer>
+
 </body>
 </html>
