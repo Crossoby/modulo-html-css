@@ -18,4 +18,15 @@ index.html → reservas →paginas/reservas.html
 index.html  → tarifas →paginas/tarifas.html
 index.html→ index.html→ index.html
 
+pruebas de formatos en Reservas.html
 
+| Nº | Campo | Dato de prueba (incorrecto) | Resultado esperado | Resultado obtenido |
+|----|-------|-----------------------------|--------------------|--------------------|
+| 1 | Nombre completo | Escribir solo 2 caracteres: "Jo" | El navegador debe impedir el envío porque no cumple minlength="3". | ______________________________ |
+| 2 | Documento | Escribir 5 dígitos: "12345" | El navegador debe impedir el envío porque requiere entre 6 y 10 dígitos. | ______________________________ |
+| 3 | Documento | Escribir letras: "ABC123" | El navegador debe impedir el envío porque solo acepta dígitos. | ______________________________ |
+| 4 | Correo electrónico | Escribir: "usuario-sin-arroba" | El navegador debe solicitar un formato de correo válido. | ______________________________ |
+| 5 | Número de celular | Escribir: "2103408197" | El navegador debe impedir el envío porque debe tener 10 dígitos y comenzar por 3. | ______________________________ |
+| 6 | Fecha de reserva | Intentar seleccionar 25/10/2026 | La fecha debe estar dentro del rango del 01/11/2026 al 31/12/2026. | ______________________________ |
+| 7 | Cantidad de bicicletas | Escribir "0" | El navegador debe impedir el envío porque la cantidad mínima es 1. | ______________________________ |
+| 8 | Confirmación | No marcar la casilla de aceptación | El navegador debe impedir el envío porque la confirmación es obligatoria. | ______________________________ |
