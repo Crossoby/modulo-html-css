@@ -12,3 +12,10 @@ Html: usare html para estructurar toda la pagina, su texto encabezado, entre otr
 Css: utilizare css para darle color a cuadros o formas que utilice para la decoracion de la pagina, ademas modificar el tamaño de los textos un ejemplo, el color de los cuadros de texto en donde iran los parrafos.
 
 Javascript: utilizare javascript para determinar las funciones que tienen las cosas dentro de la pagina, un ejemplo de ello lo seran los botones para alquilar una bicicleta.
+
+rutas que use:
+index.html → reservas →paginas/reservas.html
+index.html  → tarifas →paginas/tarifas.html
+index.html→ index.html→ index.html
+
+
