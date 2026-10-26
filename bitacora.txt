@@ -83,3 +83,8 @@ Durante la revisión del proyecto Rueda Libre identifiqué problemas relacionado
 También comprobé qué combinaciones de colores cumplen los requisitos de contraste WCAG AA y elaboré un mapa para utilizarlas correctamente cuando empiece a trabajar con CSS.
 
 Como siguiente paso, aplicaré las correcciones al HTML y comprobaré la navegación por teclado antes de publicar el sitio en GitHub Pages.
+
+propiedades que se heredan:
+- una propiedad que se hereda es el fontfamily es decir la fuente del texto ya que es una para los titulos o parrafos segun lo que elegi
+- una propiedad que no se hereda es el background o el fondo de color, ya que por cada parrafo podria ponerle una border box en la que tenga fondo de color, se alcanza a ver el fondo que elegi para la pagina en general pero eso tan solo es porque es "invisible" el border del parrafo o titulo 
+
