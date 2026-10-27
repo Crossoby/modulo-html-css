@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+
 :root {
     --color-verde: #1e7a4f;
     --color-naranja: #f39a2b;
@@ -38,8 +43,11 @@ h1, h2, h3 {
 .boton-accion {
     background-color: var(--color-verde);
     color: #FFFF;
-    padding: 10px;
+    padding: var(--espaciado-md);
     text-decoration: none;
+    border: none;
+    border-radius: var(--espaciado-pq);
+    margin: var(--espaciado-pq);
 }
  
 .boton-accion:hover, .boton-accion:focus {
@@ -47,4 +55,64 @@ h1, h2, h3 {
     color: var(--color-azul);
 }
 
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+}
 
+header {
+    min-height: 30vh;
+}
+
+article {
+    padding: var(--espaciado-md);
+    border: 1px solid var(--color-gris);
+    border-radius: var(--espaciado-pq);
+    margin-bottom: var(--espaciado-md);
+
+}
+
+.tarjeta {
+    width: 100%;
+    height: auto;
+    
+}
+
+th, td {
+    padding: var(--espaciado-pq);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid var(--color-gris);
+}
+
+thead th {
+    background-color: var(--color-azul);
+    color: var(--color-crema);
+}
+
+#formulario-reserva label {
+    display: block;
+}
+
+#formulario-reserva input:not([type="checkbox"]),
+#formulario-reserva select,
+#formulario-reserva textarea {
+    width: 40%;
+}
+
+#formulario-reserva fieldset > div {
+    margin-bottom: var(--espaciado-md);
+}
+
+#formulario-reserva button {
+    padding: var(--espaciado-md) var(--espaciado-gr);
+}
+
+#menu li {
+    display: inline-block;
+}
