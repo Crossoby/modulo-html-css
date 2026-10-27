@@ -23,3 +23,28 @@ h1, h2, h3 {
     font-family: var(--fuente-titulos);
     color: var(--color-azul);
 }
+
+#menu a {
+    color: var(--color-gris);
+}
+
+#menu .activo {
+    color: var(--color-verde);
+}
+
+#menu a:hover, #menu a:focus {
+    color: var(--color-naranja);
+}
+.boton-accion {
+    background-color: var(--color-verde);
+    color: #FFFF;
+    padding: 10px;
+    text-decoration: none;
+}
+ 
+.boton-accion:hover, .boton-accion:focus {
+    background-color: var(--color-naranja);
+    color: var(--color-azul);
+}
+
+

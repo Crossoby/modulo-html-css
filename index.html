@@ -14,20 +14,21 @@
 <body>
     <header>
         <h1>Rueda libre</h1>
-        <nav>
-            <ul>
+        <nav aria-label="navegacion-principal">
+            <ul id = "menu">
                 <h2>Menu</h2>
                 <li><a href="paginas/reservas.html">Reserva aqui</a></li>
                 <li><a href="paginas/tarifas.html">Tarifas</a></li>
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
             </ul>
+        </nav>
     <img src="img/logo.png" alt="logo de rueda libre" width="250px" height="250">
     <p>Bienvenido a Rueda libre, un espacio en donde podras encontrar tu compañera de rutas<br> para atravesar todo
         medellin
         y sus ciudades aledañas, sumergete y da el primer pedalazo con Rueda libre</p>
     <a href="#Encuéntranos">Encuéntranos</a>
     <a href="mailto:hola@ruedalibre.example">Escribenos</a>
-    </nav>
+    
     </header>
     <section>
         <h2>¿Quiénes somos?</h2>
@@ -69,7 +70,10 @@
                     <p>Puedes consultar precios y planes en "Consultar"</p>
                 </li>
             </ul>
-        <img src="img/ruta.png" alt="Ruta Bicicleta" width="400px" height="280px">
+            <a href="paginas/reservas.html" class="boton-accion">Reservar ahora</a> 
+            <div>
+            <img src="img/ruta.png" alt="Ruta Bicicleta" width="400px" height="280px">
+            </div>
         <p></p>
         <a href="paginas/tarifas.html">Consultar tarifas de alquiler</a>
         </section>
