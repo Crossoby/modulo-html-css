@@ -1,118 +1,543 @@
-* {
+:root {
+    --crema: #FAF6EF;
+    --azul-noche: #14213D;
+    --verde-ruta: #1E7A4F;
+    --gris-asfalto: #5B6470;
+    --naranja-pedal: #F2994A;
+    --blanco: #FFFFFF;
+
+    --fuente-titulos: "Montserrat", Arial, sans-serif;
+    --fuente-texto: "Open Sans", Arial, sans-serif;
+
+    --espacio-xs: 0.5rem;
+    --espacio-sm: 1rem;
+    --espacio-md: 1.5rem;
+    --espacio-lg: 2rem;
+    --espacio-xl: 3rem;
+}
+
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-
-:root {
-    --color-verde: #1e7a4f;
-    --color-naranja: #f39a2b;
-    --color-azul: #14213d;
-    --color-crema: #faf6ef;
-    --color-gris: #5b6470;
-
-    --fuente-titulos: 'Montserrat', system-ui, -apple-system, sans-serif;
-    --fuente-cuerpo: 'Open Sans', arial, helvetica, sans-serif;
-
-    --espaciado-pq: 0.5rem;
-    --espaciado-md: 1rem;
-    --espaciado-gr: 2rem;
-}
-
 body {
-    background-color: var(--color-crema);
-    font-family: var(--fuente-cuerpo);
-    color: var(--color-azul);
+    margin: 0;
+    padding-bottom: 6rem;
+    background-color: var(--crema);
+    color: var(--gris-asfalto);
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3,
+legend,
+caption {
+    color: var(--azul-noche);
     font-family: var(--fuente-titulos);
-    color: var(--color-azul);
+    font-weight: 700;
+    line-height: 1.25;
 }
 
-#menu a {
-    color: var(--color-gris);
+h1 {
+    margin: 0 0 var(--espacio-md);
+    font-size: 2.5rem;
 }
 
-#menu .activo {
-    color: var(--color-verde);
+h2 {
+    margin: 0 0 var(--espacio-md);
+    font-size: 1.75rem;
 }
 
-#menu a:hover, #menu a:focus {
-    color: var(--color-naranja);
-}
-.boton-accion {
-    background-color: var(--color-verde);
-    color: #FFFF;
-    padding: var(--espaciado-md);
-    text-decoration: none;
-    border: none;
-    border-radius: var(--espaciado-pq);
-    margin: var(--espaciado-pq);
-}
- 
-.boton-accion:hover, .boton-accion:focus {
-    background-color: var(--color-naranja);
-    color: var(--color-azul);
+h3 {
+    margin: 0 0 var(--espacio-sm);
+    font-size: 1.2rem;
 }
 
-main {
-    max-width: 60rem;
-    margin: 0 auto;
+p {
+    margin: 0 0 var(--espacio-md);
 }
 
-header {
-    min-height: 30vh;
-}
-
-article {
-    padding: var(--espaciado-md);
-    border: 1px solid var(--color-gris);
-    border-radius: var(--espaciado-pq);
-    margin-bottom: var(--espaciado-md);
-
-}
-
-.tarjeta {
-    width: 100%;
-    height: auto;
-    
-}
-
-th, td {
-    padding: var(--espaciado-pq);
-}
-
-table {
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid var(--color-gris);
-}
-
-thead th {
-    background-color: var(--color-azul);
-    color: var(--color-crema);
-}
-
-#formulario-reserva label {
+img {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-#formulario-reserva input:not([type="checkbox"]),
-#formulario-reserva select,
-#formulario-reserva textarea {
-    width: 40%;
+main,
+.barra,
+.pie-contenido {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: var(--espacio-md);
 }
 
-#formulario-reserva fieldset > div {
-    margin-bottom: var(--espaciado-md);
+main > section {
+    margin-bottom: var(--espacio-xl);
 }
 
-#formulario-reserva button {
-    padding: var(--espaciado-md) var(--espaciado-gr);
+
+a {
+    color: var(--verde-ruta);
+    text-underline-offset: 0.2rem;
+}
+
+a:hover,
+a:focus {
+    color: var(--azul-noche);
+}
+
+a:focus,
+button:focus,
+input:focus,
+input:focus-within,
+select:focus,
+textarea:focus {
+    outline: 0.2rem solid var(--azul-noche);
+    outline-offset: 0.2rem;
+}
+
+.tabla-contenedor:focus {
+    outline: 0.2rem solid var(--azul-noche);
+    outline-offset: 0.2rem;
+}
+
+.encabezado {
+    background-color: var(--blanco);
+    border-bottom: 1px solid var(--gris-asfalto);
+}
+
+.marca,
+nav {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.marca {
+    width: 38%;
+}
+
+.marca a {
+    color: var(--azul-noche);
+    font-family: var(--fuente-titulos);
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.logo {
+    display: inline-block;
+    width: 3.5rem;
+    margin-right: var(--espacio-xs);
+    vertical-align: middle;
+}
+
+nav {
+    width: 60%;
+    text-align: right;
+}
+
+#menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 #menu li {
     display: inline-block;
+    margin-left: var(--espacio-xs);
+}
+
+#menu a {
+    display: inline-block;
+    padding: var(--espacio-xs) var(--espacio-sm);
+    border-radius: 0.5rem;
+    color: var(--verde-ruta);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+#menu .activo,
+#menu a:hover,
+#menu a:focus {
+    background-color: var(--verde-ruta);
+    color: var(--blanco);
+}
+
+
+.boton-accion,
+.boton-secundario,
+.whatsapp {
+    display: inline-block;
+    padding: var(--espacio-xs) var(--espacio-md);
+    border: 1px solid var(--verde-ruta);
+    border-radius: 0.5rem;
+    background-color: var(--verde-ruta);
+    color: var(--blanco);
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.7;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton-secundario {
+    border-color: var(--naranja-pedal);
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+}
+
+.boton-accion:hover,
+.boton-accion:focus,
+.boton-secundario:hover,
+.boton-secundario:focus,
+.whatsapp:hover,
+.whatsapp:focus {
+    border-color: var(--azul-noche);
+    background-color: var(--azul-noche);
+    color: var(--blanco);
+}
+
+.acciones a {
+    margin: 0 var(--espacio-xs) var(--espacio-xs) 0;
+}
+
+
+.portada {
+    min-height: 60vh;
+    padding: var(--espacio-lg) 0;
+}
+
+.texto-portada,
+.imagen-portada,
+.pasos,
+.imagen-alquiler {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.texto-portada {
+    width: 52%;
+    margin-right: 3%;
+}
+
+.antetitulo {
+    color: var(--verde-ruta);
+    font-weight: 600;
+}
+
+.imagen-portada {
+    width: 43%;
+    height: 23rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.lista-servicios {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-servicios > li {
+    display: inline-block;
+    width: 47%;
+    margin: 0 var(--espacio-sm) var(--espacio-md) 0;
+    vertical-align: top;
+}
+
+.tarjeta,
+.horarios,
+fieldset,
+.recomendaciones {
+    padding: var(--espacio-md);
+    border: 1px solid var(--gris-asfalto);
+    border-radius: 0.75rem;
+    background-color: var(--blanco);
+}
+
+.tarjeta {
+    position: relative;
+    width: 100%;
+}
+
+.tarjeta p {
+    min-height: 5.5rem;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 14rem;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.tarjeta-nueva h3 {
+    padding-right: 4.5rem; }
+
+.etiqueta-nuevo {
+    position: absolute;
+    top: var(--espacio-sm);
+    right: var(--espacio-sm);
+    padding: 0.2rem var(--espacio-xs);
+    border-radius: 0.4rem;
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.pasos {
+    width: 55%;
+    margin-right: 3%;
+}
+
+.pasos ol {
+    padding-left: var(--espacio-md);
+    margin-bottom: var(--espacio-md);
+}
+
+.pasos li {
+    margin-bottom: var(--espacio-sm);
+}
+
+.imagen-alquiler {
+    width: 40%;
+    height: 24rem;
+    border-radius: 0.75rem;
+    object-fit: cover;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    margin-bottom: var(--espacio-lg);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--blanco);
+}
+
+caption {
+    margin-bottom: var(--espacio-sm);
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+th,
+td {
+    padding: var(--espacio-sm);
+    border: 1px solid var(--gris-asfalto);
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--verde-ruta);
+    color: var(--blanco);
+}
+
+tbody th,
+tbody tr:hover {
+    background-color: var(--crema);
+}
+
+.recomendaciones ul {
+    margin-bottom: 0;
+    padding-left: var(--espacio-md);
+}
+
+
+.horarios,
+.formulario-reserva {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.horarios {
+    width: 30%;
+    margin-right: 3%;
+}
+
+.horarios h2 {
+    font-size: 1.25rem;
+}
+
+.horarios ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.horarios li {
+    margin-bottom: var(--espacio-xs);
+}
+
+.formulario-reserva {
+    width: 65%;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0 0 var(--espacio-md);
+}
+
+legend {
+    padding: 0 var(--espacio-xs);
+    font-size: 1.15rem;
+}
+
+.campo {
+    margin-bottom: var(--espacio-md);
+}
+
+.campo:last-child {
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--espacio-xs);
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: var(--espacio-xs) var(--espacio-sm);
+    border: 1px solid var(--gris-asfalto);
+    border-radius: 0.4rem;
+    background-color: var(--blanco);
+    color: var(--gris-asfalto);
+    font: inherit;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--azul-noche);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--gris-asfalto);
+    opacity: 1;
+}
+
+textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+.confirmacion input {
+    display: inline-block;
+    width: auto;
+    margin: 0 var(--espacio-xs) 0 0;
+    accent-color: var(--verde-ruta);
+}
+
+.confirmacion label {
+    display: inline;
+    font-weight: 400;
+}
+
+form .boton-accion {
+    padding: var(--espacio-sm) var(--espacio-lg);
+}
+
+.nota-formulario {
+    margin-top: var(--espacio-sm);
+    font-size: 0.9rem;
+}
+
+.pie {
+    margin-top: var(--espacio-lg);
+    border-top: 1px solid var(--gris-asfalto);
+    background-color: var(--blanco);
+}
+
+.pie p {
+    margin-bottom: var(--espacio-xs);
+}
+
+.whatsapp {
+    position: fixed;
+    right: var(--espacio-sm);
+    bottom: var(--espacio-sm);
+    z-index: 10;
+}
+
+.saltar-contenido {
+    position: absolute;
+    top: var(--espacio-sm);
+    left: -100rem;
+    z-index: 20;
+    padding: var(--espacio-xs) var(--espacio-sm);
+    border: 1px solid var(--verde-ruta);
+    background-color: var(--crema);
+    color: var(--verde-ruta);
+}
+
+.saltar-contenido:focus {
+    left: var(--espacio-sm);
+}
+
+
+@media (max-width: 45rem) {
+    .marca,
+    nav,
+    .texto-portada,
+    .imagen-portada,
+    .lista-servicios > li,
+    .pasos,
+    .imagen-alquiler,
+    .horarios,
+    .formulario-reserva {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    nav {
+        margin-top: var(--espacio-sm);
+        text-align: left;
+    }
+
+    #menu li {
+        margin-left: 0;
+    }
+
+    #menu a {
+        padding: var(--espacio-xs) 0.75rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .portada {
+        padding-top: var(--espacio-sm);
+    }
+
+    .imagen-portada,
+    .imagen-alquiler {
+        height: 18rem;
+        margin-top: var(--espacio-sm);
+    }
+
+    .horarios {
+        margin-bottom: var(--espacio-lg);
+    }
+
+    th,
+    td {
+        padding: var(--espacio-xs);
+    }
 }
