@@ -71,12 +71,15 @@ img {
 }
 
 main,
-.barra,
-.pie-contenido {
-    max-width: 70rem;
-    margin: 0 auto;
-    padding: var(--espacio-md);
+.barra {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espacio-sm);
 }
+
 
 main > section {
     margin-bottom: var(--espacio-xl);
@@ -106,6 +109,14 @@ textarea:focus {
 .tabla-contenedor:focus {
     outline: 0.2rem solid var(--azul-noche);
     outline-offset: 0.2rem;
+}
+
+main,
+.barra,
+.pie-contenido {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: var(--espacio-md);
 }
 
 .encabezado {
@@ -143,10 +154,17 @@ nav {
 }
 
 #menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espacio-xs);
     margin: 0;
     padding: 0;
     list-style: none;
 }
+
 
 #menu li {
     display: inline-block;
@@ -468,9 +486,38 @@ form .boton-accion {
     background-color: var(--blanco);
 }
 
-.pie p {
-    margin-bottom: var(--espacio-xs);
+.pie-contenido {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--espacio-md);
 }
+
+.pie-contenido > p {
+    flex: 1 1 14rem;
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.pie-contenido {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--espacio-md);
+}
+
+.pie-contenido > p {
+    flex: 1 1 14rem;
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
 
 .whatsapp {
     position: fixed;
