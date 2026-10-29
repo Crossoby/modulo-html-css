@@ -88,3 +88,29 @@ propiedades que se heredan:
 - una propiedad que se hereda es el fontfamily es decir la fuente del texto ya que es una para los titulos o parrafos segun lo que elegi
 - una propiedad que no se hereda es el background o el fondo de color, ya que por cada parrafo podria ponerle una border box en la que tenga fondo de color, se alcanza a ver el fondo que elegi para la pagina en general pero eso tan solo es porque es "invisible" el border del parrafo o titulo 
 
+MiniReto 9. Identidad de Rueda Libre
+
+Organicé los estilos en una sola hoja externa compartida por las tres páginas. Declaré los colores, las fuentes y los espacios mediante variables en  y los apliqué con var(). Definí Montserrat para los títulos y Open Sans para los textos, con Arial como respaldo. Los párrafos heredan del body propiedades como font-family y color. En cambio, margin no se hereda: el margen de los párrafos está definido en su propia regla.
+
+MiniReto 10. Navegación y estados
+
+Estilicé el menú, los botones y los campos del formulario. Agregué estados  y , además de un contorno para identificar el elemento seleccionado con el teclado.
+
+El conflicto ocurría porque #menu a tiene especificidad (1,0,1), mientras que .activo tiene (0,1,0). Por eso, el color de #menu a prevalecía aunque .activo estuviera después. Lo resolví con #menu .activo, cuya especificidad es (1,1,0), sin usar !important. La página actual se distingue mediante un fondo verde y texto blanco. Esta combinación tiene aproximadamente 5,31:1 de contraste y supera el mínimo solicitado de 4,5:1.
+
+MiniReto 11. Modelo de caja
+
+Apliqué box-sizing: border-box para incluir el relleno y el borde dentro del ancho declarado. Centré el contenido con margin: 0 auto y un ancho máximo de 70rem. La portada tiene una altura mínima de 60vh.
+
+Las tarjetas tienen relleno, borde, esquinas redondeadas y separación. Sus imágenes ocupan el 100 % del ancho disponible. También agregué espacios a las tablas y organicé el formulario con etiquetas encima de los campos. El menú utiliza inline-block para mostrar sus opciones en una fila.
+
+Queda pendiente registrar en DevTools el ancho real de una tarjeta con content-box y con border-box.
+
+MiniReto 12. Posicionamiento y revisión
+
+Utilicé position: relative en la tarjeta de bicicletas eléctricas y position: absolute en la etiqueta “Nuevo”. Así, la etiqueta queda ubicada en una esquina sin desplazar el contenido.
+
+El enlace de WhatsApp utiliza position: fixed para permanecer en la esquina inferior derecha. Añadí espacio al final del body para reservarle sitio al terminar la página. Organicé el CSS por secciones y agrupé selectores para reducir repeticiones.
+
+Antes de publicar, completaré la revisión con Tab, comprobaré en Network la carga del CSS, las fuentes y las imágenes, registraré las comprobaciones en Computed y realizaré el commit, push y la publicación en GitHub Pages. Como mejora futura, conectaré el formulario a un servicio que reciba las reservas.
+

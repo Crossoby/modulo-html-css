@@ -1,3 +1,4 @@
+/* 1. Variables: colores, tipografías y escala de espaciado */
 :root {
     --crema: #FAF6EF;
     --azul-noche: #14213D;
@@ -16,7 +17,7 @@
     --espacio-xl: 3rem;
 }
 
-
+/* 2. Base y herencia */
 *,
 *::before,
 *::after {
@@ -25,7 +26,7 @@
 
 body {
     margin: 0;
-    padding-bottom: 6rem;
+    padding-bottom: 6rem; /* Reserva espacio para el enlace fijo de WhatsApp. */
     background-color: var(--crema);
     color: var(--gris-asfalto);
     font-family: var(--fuente-texto);
@@ -81,7 +82,7 @@ main > section {
     margin-bottom: var(--espacio-xl);
 }
 
-
+/* 3. Enlaces, navegación y estados */
 a {
     color: var(--verde-ruta);
     text-underline-offset: 0.2rem;
@@ -161,7 +162,7 @@ nav {
     text-decoration: none;
 }
 
-
+/* El id y la clase superan la especificidad de #menu a. */
 #menu .activo,
 #menu a:hover,
 #menu a:focus {
@@ -169,7 +170,7 @@ nav {
     color: var(--blanco);
 }
 
-
+/* 4. Botones: la misma clase sirve para enlaces y para submit */
 .boton-accion,
 .boton-secundario,
 .whatsapp {
@@ -208,7 +209,7 @@ nav {
     margin: 0 var(--espacio-xs) var(--espacio-xs) 0;
 }
 
-
+/* 5. Portada y tarjetas de servicios */
 .portada {
     min-height: 60vh;
     padding: var(--espacio-lg) 0;
@@ -279,7 +280,8 @@ fieldset,
 }
 
 .tarjeta-nueva h3 {
-    padding-right: 4.5rem; }
+    padding-right: 4.5rem; /* Deja sitio para la etiqueta superpuesta. */
+}
 
 .etiqueta-nuevo {
     position: absolute;
@@ -314,6 +316,7 @@ fieldset,
     object-fit: cover;
 }
 
+/* 6. Tablas */
 .tabla-contenedor {
     overflow-x: auto;
     margin-bottom: var(--espacio-lg);
@@ -353,7 +356,7 @@ tbody tr:hover {
     padding-left: var(--espacio-md);
 }
 
-
+/* 7. Formulario y horario */
 .horarios,
 .formulario-reserva {
     display: inline-block;
@@ -458,6 +461,7 @@ form .boton-accion {
     font-size: 0.9rem;
 }
 
+/* 8. Pie de página y enlace fijo */
 .pie {
     margin-top: var(--espacio-lg);
     border-top: 1px solid var(--gris-asfalto);
@@ -490,7 +494,7 @@ form .boton-accion {
     left: var(--espacio-sm);
 }
 
-
+/* 9. Ajuste sencillo para pantallas pequeñas */
 @media (max-width: 45rem) {
     .marca,
     nav,
