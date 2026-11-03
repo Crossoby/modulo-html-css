@@ -143,10 +143,11 @@ Tarjetas, tablas, etiqueta Nuevo y acceso a WhatsApp.
 
 /* Distribuye las tarjetas y las separa mediante gap. */
 .lista-servicios {
-    padding: var(--espacio-m);
-    display: flex;
+    padding: var(--espacio-m) 0;
     border-radius: var(--espacio-s);
     gap: var(--espacio-s);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
 /* Organiza el contenido en columna.
@@ -207,7 +208,10 @@ td {
 /* Estilos del título de cada tabla. */
 caption {
     font-size: var(--espacio-m);
-    margin: var(--espacio-xl);
+    caption-side: top;
+    text-align: left;
+    margin-top: var(--espacio-xl);
+    padding: var(--espacio-m);
 }
 
 /* Posiciona la etiqueta respecto a su tarjeta.
@@ -302,6 +306,8 @@ textarea:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    outline: 2px  solid var(--azul-noche);
+    padding: var();
 }
 
 /*Espacio entre logo y nombre*/
@@ -315,4 +321,50 @@ textarea:focus {
 .pie-contenido {
     gap:var(--espacio-s);
     align-items: flex-start;
+}
+
+/*Propiedades de los article de flota*/
+#flota article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--gris-asfalto);
+    gap: var(--espacio-xs);
+    border-radius: var(--espacio-xs);
+    padding: var(--espacio-xs);
+    justify-content: space-between;
+}
+
+
+/*configuracion de columnas en el espacio*/
+#flota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: var(--espacio-s);
+    width: 100%;    
+    
+}
+
+/*ajuste de imagenes dentro de las tarjetas*/
+#flota img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+/*configuracion de botones en flota*/
+#flota a {
+    padding: var(--espacio-s);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: var(--espacio-s);
+    background-color: var(--verde-ruta);
+    display: inline-block;
+    color: var(--crema);
+    border-radius: var(--espacio-xs);
+}
+
+/*configuracion de cursor sobre botones de flota*/
+#flota a:hover, #flota a:focus {
+    background-color: var(--azul-noche)
 }
