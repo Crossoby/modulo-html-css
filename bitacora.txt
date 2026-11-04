@@ -114,3 +114,92 @@ El enlace de WhatsApp utiliza position: fixed para permanecer en la esquina infe
 
 Antes de publicar, completaré la revisión con Tab, comprobaré en Network la carga del CSS, las fuentes y las imágenes, registraré las comprobaciones en Computed y realizaré el commit, push y la publicación en GitHub Pages. Como mejora futura, conectaré el formulario a un servicio que reciba las reservas.
 
+MINIRETO 1. ENCABEZADO Y PIE CON FLEXBOX
+
+Organicé el encabezado con Flexbox. Usé justify-content: space-between para separar la marca y el menú, y align-items: center para alinearlos verticalmente.
+
+En el menú usé display: flex y gap para separar las opciones. Dejé de depender de los márgenes y de inline-block para distribuirlas. Con flex-wrap: wrap, las opciones pueden pasar a otra fila cuando no caben. Quité los puntos de la lista con list-style: none.
+
+El pie utiliza Flexbox para colocar sus tres bloques en una fila y align-items: flex-start para alinearlos por arriba. Todos estos estilos están en la hoja CSS compartida por las tres páginas.
+
+Comportamiento al reducir la ventana:
+El menú puede repartir sus opciones en varias filas. El pie necesita adaptarse al espacio disponible; en el MiniReto 4 añadí su distribución en columna para móvil.
+
+Resultado observado al estrechar la ventana:
+[Completar con lo que ocurrió en el encabezado y el pie durante la prueba].
+
+MINIRETO 2. LA FLOTA EN CUADRÍCULA
+
+Organicé la flota con Grid. Usé repeat(), auto-fit y minmax() para que la cantidad de columnas dependa del espacio disponible, sin media queries. La unidad fr reparte el espacio entre las columnas y gap separa las tarjetas.
+
+Grid mantiene la misma altura entre las tarjetas de una misma fila. Dentro de cada tarjeta usé Flexbox en columna y justify-content: space-between. Así, el enlace “Reservar ahora” queda al final, aunque las descripciones tengan distintas longitudes. Conservé el relleno, los bordes y las esquinas redondeadas.
+
+Agregué la bicicleta Tándem como séptimo modelo, con precio de $20.000 por hora. No añadí una regla de CSS para esta bicicleta: utiliza la misma cuadrícula que las demás.
+
+Registro de columnas en DevTools:
+
+1280 px: [anotar cantidad observada].
+
+900 px: [anotar cantidad observada].
+
+500 px: [anotar cantidad observada].
+
+Con la fuente base de 16 px y el ancho de mi contenido, el cálculo del CSS indica 3, 2 y 1 columnas, respectivamente. Estas cantidades son una referencia; falta registrar la comprobación en DevTools.
+
+Comprobación del séptimo modelo y de los botones alineados al final:
+[Anotar el resultado de la prueba].
+
+MINIRETO 3. DISTRIBUCIÓN CON GRID Y FLEXBOX
+
+Usé Flexbox para ordenar elementos principalmente en una dirección. Elegí Grid cuando necesitaba definir columnas y organizar el contenido en filas y columnas.
+
+Estas fueron mis seis decisiones:
+
+Portada: Grid para colocar el texto a la izquierda y la imagen a la derecha. Definí las columnas con fr y centré el texto verticalmente con align-items: center.
+
+Galería de rutas: Grid para repartir las tres tarjetas en columnas iguales y separarlas con gap.
+
+Reservas: Grid para distribuir el formulario y la información de contacto en proporción 2:1. El formulario ocupa dos partes y el contacto una.
+
+Fila del formulario: Grid para colocar dos campos relacionados en columnas iguales. Cada campo conserva su etiqueta.
+
+Encabezado: Flexbox porque la marca y el menú se distribuyen principalmente en una fila.
+
+Pie de página: Flexbox porque sus tres bloques se organizan en una fila y se alinean por arriba.
+
+Las columnas se definen con fr, sin darles anchos fijos en píxeles. La validación del formulario sigue dependiendo de los atributos del HTML, como required, minlength y pattern.
+
+MINIRETO 4. ADAPTACIÓN A MÓVIL
+
+En el bloque responsive dejé una columna como base para móvil. Añadí media queries con min-width: 768px para tablet y min-width: 1200px para escritorio.
+
+En móvil, la marca queda arriba, el menú debajo y centrado, y el pie se organiza en columna. Desde tablet, el encabezado y el pie vuelven a distribuirse horizontalmente. En escritorio, las rutas quedan en tres columnas y las reservas recuperan la proporción 2:1.
+
+Problemas del CSS que ajusté:
+
+La portada, las rutas y las reservas tenían varias columnas incluso con poco espacio. Les di una columna como base y recuperé las otras columnas mediante media queries.
+
+La imagen de portada tenía altura fija y márgenes laterales. Usé altura automática y eliminé los márgenes laterales que podían hacer que las imágenes sobresalieran.
+
+Las tarjetas tenían un mínimo de 20rem, que podía superar el ancho disponible. Ajusté minmax() con min() para permitir que se reduzcan cuando el contenedor es más pequeño.
+
+Las tablas tenían demasiado relleno para un celular. Reduje el relleno y la letra en móvil, ajusté su ancho y permití que el texto se divida dentro de las celdas.
+
+Pruebas en DevTools:
+
+360 px: [comprobar una columna, imágenes contenidas y tablas completas sin desplazamiento horizontal].
+
+768 px: [registrar cómo cambian el encabezado, la portada, las rutas y el formulario].
+
+1280 px: [comprobar tres rutas en una fila y reservas en proporción 2:1].
+
+PUBLICACIÓN Y CIERRE
+
+Commits de cada MiniReto y push al repositorio: [registrar].
+URL del repositorio: [pegar enlace].
+URL de la versión 1.5 en GitHub Pages: [pegar enlace].
+Prueba en un celular real: [anotar dispositivo y resultado].
+
+Los espacios entre corchetes corresponden a resultados o enlaces que todavía debo registrar. No doy por terminadas esas comprobaciones hasta realizarlas.
+
+

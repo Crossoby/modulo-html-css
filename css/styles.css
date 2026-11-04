@@ -66,6 +66,11 @@ img {
     border-radius: var(--espacio-m);
 }
 
+/*Organizacion de imagen de alquiler*/
+.imagen-alquiler {
+    margin: var(--espacio-m);
+}
+
 /* ==================================================
    3. ENCABEZADO Y MENÚ
    Fondo del encabezado y distribución de la marca y la navegación.
