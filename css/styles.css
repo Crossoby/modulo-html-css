@@ -37,7 +37,7 @@ body {
     color: var(--gris-asfalto);
     font-family: var(--fuente-texto);
     padding-bottom: var(--espacio-s);
-    margin: var(--espacio-m);
+    margin: 0%;
 }
 
 /* Limita el ancho del contenido y centra el bloque principal. */
@@ -45,11 +45,6 @@ main {
     margin: 0 auto;
     max-width: 70rem;
     width: 90%;
-}
-
-/* La portada tiene, como mínimo, la altura de la ventana. */
-.portada {
-    min-height: 100vh;
 }
 
 /* Fuente y color comunes de los títulos. */
@@ -66,6 +61,7 @@ caption {
 img {
     max-width: 100%;
     margin: var(--espacio-s);
+    border-radius: var(--espacio-m);
 }
 
 /* ==================================================
@@ -228,6 +224,7 @@ caption {
     font-weight: 600;
 }
 
+
 /* Mantiene el enlace en la esquina inferior derecha de la ventana. */
 .whatsapp {
     display: inline-block;
@@ -264,7 +261,7 @@ fieldset {
 
 /* Limita el ancho del contenedor del formulario. */
 .formulario-reserva {
-    max-width: 35rem;
+    max-width: 100%;
 }
 
 /* Los controles ocupan el ancho disponible dentro de cada campo. */
@@ -306,8 +303,12 @@ textarea:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    outline: 2px  solid var(--azul-noche);
-    padding: var();
+    padding: var(--espacio-s);
+}
+
+.encabezado {
+    background-color: var(--blanco);
+    border-bottom: var(--gris-asfalto) 5px solid;
 }
 
 /*Espacio entre logo y nombre*/
@@ -319,6 +320,7 @@ textarea:focus {
 
 /*Pie contenido*/
 .pie-contenido {
+    display: flex;
     gap:var(--espacio-s);
     align-items: flex-start;
 }
@@ -367,4 +369,81 @@ textarea:focus {
 /*configuracion de cursor sobre botones de flota*/
 #flota a:hover, #flota a:focus {
     background-color: var(--azul-noche)
+}
+
+/*configuracion de la porta y texto*/
+.portada {
+    display: grid;
+    min-height: 35vh;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: var(--espacio-s);
+
+}
+
+/*Espacio entre la portada y el main, ademas el ajuste de imagen y distrubuición de la misma y el texto*/
+.portada img {
+    display: block;
+    width: 35rem;
+    max-width: 100%;
+    height: 35rem;
+    margin: var(--espacio-xl);
+    border-radius: var(--espacio-s);
+}
+
+/*tarjetas de las rutas en el index*/
+.rutas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(20rem, 1fr));
+    gap: var(--espacio-m);
+    position: relative;
+}
+
+.rutas article {
+    outline: 2px solid var(--gris-asfalto);
+    border-radius: var(--espacio-xs);
+}
+
+.rutas img {
+    width: 100%;
+    margin: 0;
+    height: auto;
+    padding: var(--espacio-xs);
+}
+
+.rutas h3 {
+    padding: var(--espacio-s);
+}
+
+.dificultad {
+    position: relative;
+}
+
+.dificultad p{
+    position: absolute;
+    top: var(--espacio-s);
+    right: var(--espacio-s);
+    padding: 0.2rem var(--espacio-xs);
+    border-radius: 0.4rem;
+    background-color: var(--naranja-pedal);
+    color: var(--azul-noche);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+#formulario-reserva {
+    display: grid;
+    order: -1;
+}
+
+.reservas {
+    gap: var(--espacio-s);
+    display: grid;
+    grid-template-columns: 2fr 1fr ;
+}
+
+#formulario-reserva .separacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-s);
 }
