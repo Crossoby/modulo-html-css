@@ -123,6 +123,7 @@ img {
     display: inline-block;
     color: var(--crema);
     border-radius: var(--espacio-xs);
+    margin: 0;
 }
 
 /* Apariencia del botón secundario, como «Consultar tarifas» en la portada. */
@@ -189,8 +190,8 @@ img {
     display: block;
     width: 35rem;
     max-width: 100%;
-    height: 35rem;
-    margin: var(--espacio-xl);
+    height: auto;
+    margin: var(--espacio-xl) auto;
     border-radius: var(--espacio-s);
 }
 
@@ -517,121 +518,85 @@ footer {
     background-color: #14213D;
 }
 
-/* ==================================================
-   MINIRETO 4: MOBILE-FIRST
-   Añade este bloque al final de tu CSS.
-   ================================================== */
+/* BASE MÓVIL: elementos uno debajo del otro. */
+.barra,
+#menu,
+.pie-contenido {
+    flex-direction: column;
+}
 
-/* Base móvil: contenido en una sola columna. */
+/* La navegación ocupa todo el ancho disponible. */
+.barra nav,
+#menu {
+    width: 100%;
+}
+
+/* Cada opción del menú queda en su propia fila. */
+#menu {
+    margin: 0;
+    padding: 0;
+    align-items: stretch;
+}
+
+#menu a {
+    display: block;
+    text-align: center;
+}
+
+/* Una sola columna para el contenido en móvil. */
 .portada,
+#flota,
+.lista-servicios,
 .rutas,
 .reservas,
 #formulario-reserva .separacion {
     grid-template-columns: minmax(0, 1fr);
 }
 
-/* Las tarjetas pueden reducirse cuando hay menos de 20rem disponibles. */
-#flota,
-.lista-servicios {
-    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
-}
-
-/* En móvil, la marca queda arriba y el menú debajo. */
-.barra {
-    flex-direction: column;
-    gap: var(--espacio-s);
-}
-
-.marca {
-    max-width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.barra nav {
-    max-width: 100%;
-}
-
-#menu {
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-/* El pie se organiza verticalmente en móvil. */
-.pie-contenido {
-    flex-direction: column;
-}
-
-/* Imágenes fluidas sin márgenes laterales que provoquen desbordamiento. */
-img {
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-}
-
-/* Sustituye la altura fija y los márgenes laterales de la portada. */
-.portada img {
-    height: auto;
-    margin: var(--espacio-xl) auto;
-}
-
-/* Permite que los bloques y campos se ajusten a sus columnas. */
-.portada > *,
-.reservas > *,
-.campo,
-fieldset {
-    min-width: 0;
-}
-
-/* Tablas completas dentro del ancho disponible en móvil. */
-table {
-    width: 100%;
-    table-layout: fixed;
-    font-size: 0.75rem;
-}
-
-th,
-td {
-    padding: var(--espacio-xs) 0.25rem;
-    overflow-wrap: anywhere;
-}
-
-/* ==================================================
-   TABLET: DESDE 768 PX
-   ================================================== */
-
+/* TABLET: DESDE 768 PX. */
 @media (min-width: 768px) {
-    /* Marca y menú recuperan su distribución horizontal. */
-    .barra {
+    /* Encabezado, menú y pie recuperan la dirección horizontal. */
+    .barra,
+    #menu,
+    .pie-contenido {
         flex-direction: row;
+    }
+
+    .barra nav,
+    #menu {
+        width: auto;
     }
 
     #menu {
         justify-content: flex-end;
+        align-items: center;
     }
 
-    /* Texto e imagen vuelven a compartir una fila. */
+    /* Texto e imagen comparten una fila. */
     .portada {
         grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
     }
 
-    /* Dos rutas por fila. */
-    .rutas {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Flota y servicios vuelven a adaptar sus columnas al espacio. */
+    #flota,
+    .lista-servicios {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(min(20rem, 100%), 1fr)
+        );
     }
 
-    /* Dos campos relacionados por fila. */
+    /* Dos rutas o campos relacionados por fila. */
+    .rutas,
     #formulario-reserva .separacion {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .pie-contenido {
-        flex-direction: row;
         flex-wrap: wrap;
     }
 
-    /* Las tablas recuperan una letra mayor y columnas según el contenido. */
+    /* Ajustes de las tablas para pantallas mayores. */
     table {
         table-layout: auto;
         font-size: 1rem;
@@ -643,22 +608,18 @@ td {
     }
 }
 
-/* ==================================================
-   ESCRITORIO: DESDE 1200 PX
-   ================================================== */
-
+/* ESCRITORIO: DESDE 1200 PX. */
 @media (min-width: 1200px) {
-    /* Las tres rutas comparten una fila. */
+    /* Tres rutas por fila. */
     .rutas {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    /* Formulario a la izquierda y contacto a la derecha, en proporción 2:1. */
+    /* Formulario y contacto en proporción 2:1. */
     .reservas {
         grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     }
 
-    /* Las tablas recuperan su relleno original. */
     th,
     td {
         padding: var(--espacio-m);
